@@ -1,0 +1,89 @@
+# ============================
+# AI Text Summarizer — .gitignore
+# ============================
+#
+# 📚 WHAT IS .gitignore?
+#     Tells Git which files/folders to IGNORE (not track).
+#     You don't want to commit:
+#     - Virtual environments (huge, reproducible via requirements.txt)
+#     - Model caches (multi-GB, downloadable)
+#     - Uploaded files (user data, privacy)
+#     - Logs (generated at runtime)
+#     - IDE settings (personal preference)
+#
+# 📚 PATTERN SYNTAX:
+#     *     = matches any characters
+#     **    = matches any directory depth
+#     /     = directory separator
+#     !     = negate (un-ignore) a pattern
+#
+
+# ──────────────────────────────────────────────
+# Python
+# ──────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# ──────────────────────────────────────────────
+# Virtual Environment
+# ──────────────────────────────────────────────
+venv/
+.venv/
+env/
+.env
+
+# ──────────────────────────────────────────────
+# IDE / Editor
+# ──────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+
+# ──────────────────────────────────────────────
+# OS Files
+# ──────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ──────────────────────────────────────────────
+# ML / Model Caches
+# ──────────────────────────────────────────────
+# Hugging Face model cache (can be multi-GB)
+.cache/
+models/cache/
+*.bin
+*.safetensors
+!requirements.txt
+
+# ──────────────────────────────────────────────
+# Project Runtime Files (generated, not source)
+# ──────────────────────────────────────────────
+uploads/
+exports/
+logs/
+history/
+database/*.db
+
+# ──────────────────────────────────────────────
+# Jupyter Notebooks (checkpoints)
+# ──────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ──────────────────────────────────────────────
+# Testing
+# ──────────────────────────────────────────────
+.pytest_cache/
+htmlcov/
+.coverage
+*.cover

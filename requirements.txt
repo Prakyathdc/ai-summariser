@@ -1,0 +1,159 @@
+# ============================
+# AI Text Summarization System
+# Python Dependencies
+# ============================
+#
+# 📚 WHAT IS requirements.txt?
+#     This file lists every external Python package the project needs.
+#     When someone clones your repo, they run:
+#         pip install -r requirements.txt
+#     and ALL dependencies install automatically.
+#
+# 📚 WHY PIN VERSIONS? (e.g., streamlit>=1.30.0)
+#     Without version pins, pip installs the latest version — which might
+#     introduce breaking changes. We use >= (minimum version) to balance
+#     stability with flexibility.
+#
+# ============================
+# CORE FRAMEWORK
+# ============================
+
+# Streamlit: Turns Python scripts into interactive web apps.
+# No HTML/CSS/JS needed — just Python. Perfect for ML demos.
+streamlit>=1.30.0
+
+# ============================
+# NLP & AI MODELS
+# ============================
+
+# Transformers: Hugging Face's library for pretrained models (BART, T5, PEGASUS).
+# Provides AutoTokenizer, AutoModel, pipeline() — the backbone of our summarizer.
+transformers>=4.36.0
+
+# PyTorch: Deep learning framework that Transformers uses under the hood.
+# Handles tensor operations, GPU acceleration, model inference.
+torch>=2.1.0
+
+# SentencePiece: Google's unsupervised text tokenizer.
+# Required by T5 and PEGASUS models for subword tokenization (BPE/Unigram).
+sentencepiece>=0.2.0
+
+# NLTK: Natural Language Toolkit — classic NLP library.
+# We use it for: sentence tokenization, stopwords, stemming, BLEU score.
+nltk>=3.8.0
+
+# spaCy: Industrial-strength NLP library.
+# We use it for: NER (Named Entity Recognition), lemmatization, POS tagging.
+spacy>=3.7.0
+
+# scikit-learn: Machine learning library.
+# We use it for: TF-IDF vectorization (keyword extraction), LDA (topic modeling).
+scikit-learn>=1.3.0
+
+# sentence-transformers: Sentence embeddings for semantic similarity.
+# Used in RAG (Retrieval-Augmented Generation) to find relevant text chunks.
+sentence-transformers>=2.2.0
+
+# FAISS: Facebook AI Similarity Search — fast vector similarity search.
+# Used in RAG to find the most relevant chunks for a user's question.
+faiss-cpu>=1.7.0
+
+# ============================
+# FILE PROCESSING
+# ============================
+
+# PyPDF2: Extract text from PDF files page-by-page.
+# PDFs don't store "plain text" — they store positioning commands. PyPDF2 decodes them.
+PyPDF2>=3.0.0
+
+# pdfplumber: More accurate PDF text extraction (handles tables, columns).
+# Fallback when PyPDF2 struggles with complex layouts.
+pdfplumber>=0.10.0
+
+# python-docx: Read and write Microsoft Word (.docx) files.
+# DOCX is actually a ZIP archive of XML files — python-docx abstracts this away.
+python-docx>=1.1.0
+
+# ============================
+# TEXT PROCESSING & DETECTION
+# ============================
+
+# chardet: Auto-detect text file encoding (UTF-8, Latin-1, etc.).
+# When you open a .txt file, you need to know its encoding or you get garbled text.
+chardet>=5.2.0
+
+# langdetect: Language detection (port of Google's language-detection library).
+# Detects 55 languages from text samples.
+langdetect>=1.0.9
+
+# beautifulsoup4: Parse HTML/XML — we use it to extract text from web pages.
+beautifulsoup4>=4.12.0
+
+# requests: HTTP library for fetching web pages and URLs.
+requests>=2.31.0
+
+# youtube-transcript-api: Extract YouTube video transcripts without API keys.
+youtube-transcript-api>=0.6.0
+
+# ============================
+# DATA & VISUALIZATION
+# ============================
+
+# Pandas: Data manipulation library (DataFrames).
+# We use it for history management and data export.
+pandas>=2.1.0
+
+# NumPy: Numerical computing library (arrays, math).
+# Foundation for almost all scientific Python — used by Pandas, sklearn, etc.
+numpy>=1.26.0
+
+# Matplotlib: Core plotting library.
+# We use it for: word frequency charts, compression ratio gauges, etc.
+matplotlib>=3.8.0
+
+# Plotly: Interactive charts (optional, for richer Streamlit visualizations).
+plotly>=5.18.0
+
+# wordcloud: Generate word cloud images from text.
+wordcloud>=1.9.0
+
+# ============================
+# EXPORT & DOCUMENT GENERATION
+# ============================
+
+# fpdf2: Create PDF files from Python (lightweight, no external dependencies).
+fpdf2>=2.7.0
+
+# ============================
+# SPEECH
+# ============================
+
+# gTTS: Google Text-to-Speech — converts text to MP3 audio files.
+gTTS>=2.4.0
+
+# SpeechRecognition: Speech-to-text using Google's free web API.
+SpeechRecognition>=3.10.0
+
+# ============================
+# GRAMMAR & QUALITY
+# ============================
+
+# language-tool-python: Grammar and spell checking (wraps LanguageTool).
+language-tool-python>=2.7.0
+
+# ============================
+# EVALUATION METRICS
+# ============================
+
+# rouge-score: Compute ROUGE metrics for summarization evaluation.
+rouge-score>=0.1.2
+
+# ============================
+# TESTING
+# ============================
+
+# pytest: Professional testing framework (better than unittest).
+pytest>=7.4.0
+
+# pytest-cov: Measure code coverage during tests.
+pytest-cov>=4.1.0
